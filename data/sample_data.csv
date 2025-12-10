@@ -1,0 +1,6 @@
+text,label
+"Apple CEO Tim Cook announced new products at the WWDC event in San Jose.",PERSON,ORG,LOC
+"Amazon Web Services opened a new data center in Frankfurt, Germany yesterday.",ORG,LOC,DATE
+"Elon Musk's SpaceX launched a new rocket from Kennedy Space Center in Florida.",PERSON,ORG,LOC
+"The United Nations Climate Conference will be held in Paris next month.",ORG,LOC,DATE
+"Google's Sundar Pichai spoke about AI at the conference in Mountain View.",ORG,PERSON,LOC

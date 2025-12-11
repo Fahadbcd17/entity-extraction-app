@@ -1,0 +1,9 @@
+# Minimal .dockerignore
+.git/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+*.log
+logs/
+chroma_db/

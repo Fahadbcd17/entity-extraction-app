@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: entity-chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - ALLOW_RESET=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+      - PERSIST_DIRECTORY=/chroma/chroma
+    restart: unless-stopped
+    networks:
+      - entity-network
+
+  ner-app:
+    build: .
+    container_name: entity-ner-app
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - chromadb
+    networks:
+      - entity-network
+    command: python app.py
+    restart: unless-stopped
+
+volumes:
+  chroma_data:
+
+networks:
+  entity-network:
+    driver: bridge

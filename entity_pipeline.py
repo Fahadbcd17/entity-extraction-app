@@ -4,7 +4,6 @@ import numpy as np
 from typing import List, Dict, Any, Tuple
 from transformers import AutoTokenizer, AutoModelForTokenClassification, pipeline
 from sentence_transformers import SentenceTransformer
-from collections import defaultdict
 
 class EntityExtractor:
     def __init__(self, model_name: str = "dslim/bert-base-NER"):

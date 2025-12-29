@@ -12,13 +12,10 @@ import os
 import gradio as gr
 import pandas as pd
 import numpy as np
-from typing import List, Dict, Any
+from typing import List, Dict
 import plotly.graph_objects as go
-from datetime import datetime
-import requests
-import json
 
-from entity_pipeline import EntityExtractor, DataPreprocessor
+from entity_pipeline import EntityExtractor
 from chroma_manager import ChromaDBManager
 
 # Initialize components
